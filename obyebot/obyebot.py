@@ -40,42 +40,11 @@ third = [
 def buttons(keyboard):
     """Добавляет кнопки со знаками. """
 
-    key_oven = types.InlineKeyboardButton(text='Овен', callback_data='zodiac')
+    signs = ["Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы",
+             "Скорпион", "Стрелец", "Козерог", "Водолей", "Рыбы"]
 
-    keyboard.add(key_oven)
-
-    key_telec = types.InlineKeyboardButton(text='Телец', callback_data='zodiac')
-    keyboard.add(key_telec)
-
-    key_bliznecy = types.InlineKeyboardButton(text='Близнецы', callback_data='zodiac')
-    keyboard.add(key_bliznecy)
-
-    key_rak = types.InlineKeyboardButton(text='Рак', callback_data='zodiac')
-    keyboard.add(key_rak)
-
-    key_lev = types.InlineKeyboardButton(text='Лев', callback_data='zodiac')
-    keyboard.add(key_lev)
-
-    key_deva = types.InlineKeyboardButton(text='Дева', callback_data='zodiac')
-    keyboard.add(key_deva)
-
-    key_vesy = types.InlineKeyboardButton(text='Весы', callback_data='zodiac')
-    keyboard.add(key_vesy)
-
-    key_scorpion = types.InlineKeyboardButton(text='Скорпион', callback_data='zodiac')
-    keyboard.add(key_scorpion)
-
-    key_strelec = types.InlineKeyboardButton(text='Стрелец', callback_data='zodiac')
-    keyboard.add(key_strelec)
-
-    key_kozerog = types.InlineKeyboardButton(text='Козерог', callback_data='zodiac')
-    keyboard.add(key_kozerog)
-
-    key_vodoley = types.InlineKeyboardButton(text='Водолей', callback_data='zodiac')
-    keyboard.add(key_vodoley)
-
-    key_ryby = types.InlineKeyboardButton(text='Рыбы', callback_data='zodiac')
-    keyboard.add(key_ryby)
+    for sign in signs:
+        keyboard.add(types.InlineKeyboardButton(text=sign, callback_data='zodiac'))
 
 
 @bot.message_handler(content_types=['text'])
